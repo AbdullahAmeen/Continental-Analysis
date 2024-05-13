@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alder Districts of Madison</title>
+    <!--Link the syle files here.-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    
+        #backrondimage{
+        background-image: url("contents/SkyStar.png");
+        background-position: center 0px;
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+        height:950px;
+        }
+        #rotatingEarth {
+        width: 430px;
+        height:430px;
+        background: url("contents/World_Continents_New.png");
+        border: 0.25px solid rgb(39, 37, 37);
+        border-radius: 50%;
+        overflow: visible;
+        background-size: 738px;
+        box-shadow: inset -0px 0px 20px 0px rgb(255, 255, 255),
+        inset -6px 0 6px 2px rgba(253, 253, 253, 0.2);
+        animation-name: rotate;
+        animation-duration: 200s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        position: absolute;
+        top: 190px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+       
+        }
+
+        @keyframes rotate {
+        from { background-position-x: 0px; }
+        to { background-position-x: 3700px; }
+        }
+
+        img:hover{
+        box-shadow: 0.5px 1px 1px 2px yellow;
+        border-radius: 50%;
+        background: lightblue;
+        }
+
+        .thefivecontinents{
+          font-size: 25px;
+          color: white;
+          text-align:auto;
+          font-variant: small-caps;
+          background-position: center;
+          margin-top: 10px;
+          text-align: center;
+          margin-top: 25px;
+        }
+
+    .undertheglobetext{
+      text-align: center;
+    }
+
+   table, th, td {
+      border:1px solid rgb(251, 250, 250);
+    }
+  td{
+    font-size: 11px;
+  }
+  table:hover{
+    background-color: rgb(66, 6, 6);
+  }
+  table{
+    border: 1px solid rgb(236, 248, 4);
+  }
+
+    table{
+      text-align: center;
+    }
+  .center {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: rgb(8, 8, 8);
+}
+
+.tableheader{
+  background-color: rgba(5, 134, 134, 0.633);
+  font-size: 14px;
+}
+
+.worldpolulation{
+  height: 325px;
+  width: 415px;
+  border: 1px solid yellow;
+}
+
+.worldpolulation:hover{
+  background-color: rgb(63, 8, 8);
+  border-radius: 10px;
+}
+
+#map{
+    margin-top: 1480px;
+    height: 50vh;
+    width: 100%;
+    border: 1px solid yellow;
+    border-radius: 10px;   
+}
+
+#info_text{
+  color: white;
+  font-size: 18px;
+  background-color: rgb(1, 29, 33);
+  opacity: 0.7;
+  padding: auto;
+  margin: 2px;
+  border-radius: 2px;
+}
+
+.headings{
+  color:yellow;
+  font-size: 11px;
+}
+      
+
+</style>
+
+</head>
+
+<body id="backrondimage">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          </div>
+          
+          <div class="center">
+            <h1 class="thefivecontinents">World's Continents Population, Area and Population Denisty as of 2023</h1>
+          </div>
+          <div id="rotatingEarth">
+            <div class="undertheglobetext">
+              <p style="color: white; margin-top:500px; font-size:30px">List of the seven continents</p>
+              <table class="center">
+                <tr class="tableheader">
+                  <th >Continent</th>
+                  <th>Total Area (Km2)</th>
+                  <th>Estimated Population</th>
+                  <th>Density (Persons/Km2)</th>
+          
+                </tr>
+                <tr>
+                  <td>Asia</td>
+                  <td>4,753,079,726</td>
+                  <td>31,033,131</td>
+                  <td>153</td>
+                </tr>
+                <tr>
+                  <td>Africa</td>
+                  <td>1,460,481,772</td>
+                  <td>29,648,481</td>
+                  <td>49</td>
+                </tr>
+                <tr>
+                  <td>Eroup</td>
+                  <td>740,433,713</td>
+                  <td>22,134,710</td>
+                  <td>33</td>
+                </tr>
+                <tr>
+                  <td>North America</td>
+                  <td>604,182,517</td>
+                  <td>21,330,000</td>
+                  <td>28</td>
+                </tr>
+                <tr>
+                  <td>South America</td>
+                  <td>439,719,009</td>
+                  <td>17,461,112</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>Australia/Oceania</td>
+                  <td>46,004,866</td>
+                  <td>8,486,460</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>Antractica</td>
+                  <td>0</td>
+                  <td>13,720,000</td>
+                  <td>0</td>
+                </tr>
+              </table> <br>
+              <img src="contents/World-Population.png" alt="" class="worldpolulation"> <br>
+              <p style="color: white;">Source of Polulation: <a href="https://www.worldometers.info/geography/7-continents/">Worldometer</a></p><br>
+            </div>
+          </div> 
+        </div>
+
+        
+        <div class="col-lg-12">
+          <div id="map"></div>
+        </div><br><br><br><br>
+        
+
+      </div>
+ 
+
+    <script type="text/javascript" src="js/leaflet.js"></script>
+    <script type="text/javascript"src="js/choropleth.js"></script>
+    <script type="text/javascript" src="js/worldcontinents.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+      
+
+  </body>
+
+   
+
+</html>
