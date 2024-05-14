@@ -11,7 +11,7 @@ L.Control.textbox = L.Control.extend({
 			
 		var text = L.DomUtil.create('div');
 		text.id = "info_text";
-		text.innerHTML = "<span>Contenents' Population, Population Density, GDP and GDP Per Capita- 2023</span>"
+		text.innerHTML = "<span>Continents, Population, Population Density, GDP and GDP Per Capita- 2023</span>"
 		return text;
 		},
 
@@ -33,12 +33,23 @@ L.choropleth(Contenents, {
 		fillOpacity: 0.6
 	},
 	onEachFeature: function(feature, layer) {
-		layer.bindPopup("<span class = 'headings'>Contenent Name : </span> " + feature.properties.CONTINENT + "<br>"
+		layer.bindPopup("<span class = 'headings'>Continent Name : </span> " + feature.properties.CONTINENT + "<br>"
         + "<span class = 'headings'>Total GDP (Billions) : </span>"+ "$" + feature.properties.GDP.toLocaleString().replace(/B(?=(d{3})+(?!d))/g, ",") + "<br>"
         + "<span class = 'headings'>Share : </span>" + feature.properties.Share +"%" + "<br>"
         + "<span class = 'headings'>Population : </span> " + feature.properties.Population.toLocaleString().replace(/B(?=(d{3})+(?!d))/g, ",") + "<br>"
         + "<span class = 'headings'>Density : </span> " + feature.properties.Density + " Persons / km2")
-	}
+		 layer.on('mouseover', function(e) {
+        e.target.setStyle({
+            fillOpacity: 0.9
+        });
+    });
+    layer.on('mouseout', function(e) {
+        e.target.setStyle({
+            fillOpacity: 0.6
+        });
+    });
+}
+
 }).addTo(map)
 
 function addThousandsSeparator(n) {
