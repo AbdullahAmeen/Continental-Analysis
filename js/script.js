@@ -37,8 +37,7 @@ L.choropleth(Contenents, {
         + "<span class = 'headings'>Total GDP (Billions) : </span>"+ "$" + feature.properties.GDP.toLocaleString().replace(/B(?=(d{3})+(?!d))/g, ",") + "<br>"
         + "<span class = 'headings'>Share : </span>" + feature.properties.Share +"%" + "<br>"
         + "<span class = 'headings'>Population : </span> " + feature.properties.Population.toLocaleString().replace(/B(?=(d{3})+(?!d))/g, ",") + "<br>"
-        + "<span class = 'headings'>Density : </span> " + feature.properties.Density + " Persons / km2" + <br>
-	+ "<span class = 'headings'>GDP Per Capita : </span> "+ "$" + feature.properties.GDPPERCAPI)
+        + "<span class = 'headings'>Density : </span> " + feature.properties.Density + " Persons / km2")
 		 layer.on('mouseover', function(e) {
         e.target.setStyle({
             fillOpacity: 0.9
