@@ -63,3 +63,8 @@
 .leaflet-interactive{
     font-size: 100px;
 }
+
+.leaflet-control-zoom{
+
+    scroll-margin-left: 650px;
+}
